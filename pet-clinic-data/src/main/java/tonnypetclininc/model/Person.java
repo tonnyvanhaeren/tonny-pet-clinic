@@ -1,4 +1,4 @@
-package com.springframework.tonnypetclininc.model;
+package tonnypetclininc.model;
 
 public class Person {
     private String firstName;
