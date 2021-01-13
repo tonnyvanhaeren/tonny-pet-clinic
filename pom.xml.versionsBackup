@@ -16,7 +16,7 @@
 
 	<groupId>com.springframework</groupId>
 	<artifactId>tonny-pet-clinic</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>tonny-pet-clinic</name>
 	<description>course spring pet clinic</description>
 
