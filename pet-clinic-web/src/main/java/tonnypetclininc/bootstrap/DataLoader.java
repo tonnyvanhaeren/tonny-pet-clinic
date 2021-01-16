@@ -1,14 +1,12 @@
 package tonnypetclininc.bootstrap;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import tonnypetclininc.model.Owner;
 import tonnypetclininc.model.Vet;
 import tonnypetclininc.services.OwnerService;
 import tonnypetclininc.services.VetService;
-import tonnypetclininc.services.map.OwnerServiceMap;
-import tonnypetclininc.services.map.VetServiceMap;
+
 
 @Component
 public class DataLoader implements CommandLineRunner {
