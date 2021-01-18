@@ -3,11 +3,14 @@ package tonnypetclininc.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import tonnypetclininc.model.Owner;
+import tonnypetclininc.model.Pet;
 import tonnypetclininc.model.PetType;
 import tonnypetclininc.model.Vet;
 import tonnypetclininc.services.OwnerService;
 import tonnypetclininc.services.PetTypeService;
 import tonnypetclininc.services.VetService;
+
+import java.time.LocalDate;
 
 
 @Component
@@ -38,12 +41,32 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Antonius");
         owner1.setLastName("Vanhaeren");
+        owner1.setAddress("Gelaagstraat 43");
+        owner1.setCity("Rupelmonde");
+        owner1.setTelephone("123121212");
+
+        Pet antoniusPet = new Pet();
+        antoniusPet.setPetType(savedDogPetType);
+        antoniusPet.setOwner(owner1);
+        antoniusPet.setBirthDate(LocalDate.now());
+        antoniusPet.setName("Woef");
+        owner1.getPets().add(antoniusPet);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Bonny");
         owner2.setLastName("Vanhaeren");
+        owner2.setAddress("Anthon Piekstraat");
+        owner2.setCity("Schoten");
+        owner2.setTelephone("123121212");
+
+        Pet bonnyPet = new Pet();
+        bonnyPet.setPetType(savedCatPetType);
+        bonnyPet.setOwner(owner2);
+        bonnyPet.setBirthDate(LocalDate.now());
+        bonnyPet.setName("Miauw");
+        owner2.getPets().add(bonnyPet);
 
         ownerService.save(owner2);
 
