@@ -1,5 +1,6 @@
 package tonnypetclininc.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import tonnypetclininc.model.Speciality;
 import tonnypetclininc.model.Vet;
@@ -9,6 +10,7 @@ import tonnypetclininc.services.VetService;
 import java.util.Set;
 
 @Service
+@Profile("springdatamap")
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     private final SpecialityService specialityService;
 
