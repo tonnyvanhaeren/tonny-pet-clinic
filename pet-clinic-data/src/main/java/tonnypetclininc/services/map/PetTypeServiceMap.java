@@ -7,7 +7,7 @@ import tonnypetclininc.services.PetTypeService;
 import java.util.Set;
 
 @Service
-@Profile("springdatamap")
+@Profile({"default", "map"})
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override

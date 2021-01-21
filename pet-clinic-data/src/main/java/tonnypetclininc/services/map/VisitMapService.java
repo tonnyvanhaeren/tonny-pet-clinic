@@ -8,7 +8,7 @@ import tonnypetclininc.services.VisitService;
 import java.util.Set;
 
 @Service
-@Profile("springdatamap")
+@Profile({"default", "map"})
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override

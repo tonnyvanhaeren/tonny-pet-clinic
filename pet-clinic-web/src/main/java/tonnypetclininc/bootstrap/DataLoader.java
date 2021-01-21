@@ -6,8 +6,8 @@ import tonnypetclininc.model.*;
 import tonnypetclininc.services.OwnerService;
 import tonnypetclininc.services.PetTypeService;
 import tonnypetclininc.services.VetService;
-import tonnypetclininc.services.map.SpecialityMapService;
-import tonnypetclininc.services.map.VisitMapService;
+import tonnypetclininc.services.SpecialityService;
+import tonnypetclininc.services.VisitService;
 
 import java.time.LocalDate;
 
@@ -18,16 +18,17 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
-    private final SpecialityMapService specialityMapService;
-    private final VisitMapService visitMapService;
+    private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityMapService specialityMapService, VisitMapService visitMapService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
-        this.specialityMapService = specialityMapService;
-        this.visitMapService = visitMapService;
+        this.specialityService = specialityService;
+        this.visitService = visitService;
     }
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -51,15 +52,15 @@ public class DataLoader implements CommandLineRunner {
 
         Speciality radiology = new Speciality();
         radiology.setDescription("Radiology");
-        Speciality savedRadiology = specialityMapService.save(radiology);
+        Speciality savedRadiology = specialityService.save(radiology);
 
         Speciality surgery = new Speciality();
         surgery.setDescription("Surgery");
-        Speciality savedSurgery = specialityMapService.save(surgery);
+        Speciality savedSurgery = specialityService.save(surgery);
 
         Speciality dentistry = new Speciality();
         dentistry.setDescription("Dentistry");
-        Speciality savedDentistry = specialityMapService.save(dentistry);
+        Speciality savedDentistry = specialityService.save(dentistry);
 
         System.out.println("Loaded Vet Specialities...");
 
@@ -101,7 +102,7 @@ public class DataLoader implements CommandLineRunner {
         catVisit.setPet(bonnyPet);
         catVisit.setDate(LocalDate.now());
         catVisit.setDescription("Sneezy Kitty");
-        visitMapService.save(catVisit);
+        visitService.save(catVisit);
 
         System.out.println("Loaded Visits...");
 

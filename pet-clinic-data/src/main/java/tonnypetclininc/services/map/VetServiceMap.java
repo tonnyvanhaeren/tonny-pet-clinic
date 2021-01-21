@@ -10,7 +10,7 @@ import tonnypetclininc.services.VetService;
 import java.util.Set;
 
 @Service
-@Profile("springdatamap")
+@Profile({"default", "map"})
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     private final SpecialityService specialityService;
 
