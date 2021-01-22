@@ -11,7 +11,6 @@ import tonnypetclininc.services.VisitService;
 
 import java.time.LocalDate;
 
-
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -70,6 +69,8 @@ public class DataLoader implements CommandLineRunner {
         owner1.setAddress("Gelaagstraat 43");
         owner1.setCity("Rupelmonde");
         owner1.setTelephone("123121212");
+
+
 
         Pet antoniusPet = new Pet();
         antoniusPet.setPetType(savedDogPetType);
