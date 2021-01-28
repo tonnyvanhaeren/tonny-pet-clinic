@@ -9,6 +9,7 @@ import tonnypetclininc.services.OwnerService;
 import tonnypetclininc.services.PetTypeService;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -57,4 +58,10 @@ public class OwnerSDJpaService implements OwnerService {
     public Owner findByLastName(String lastname) {
         return ownerRepository.findByLastName(lastname);
     }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return ownerRepository.findAllByLastNameLike(lastName);
+    }
+
 }
